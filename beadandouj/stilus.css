@@ -1,0 +1,425 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300; 
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    padding-top: 70px;  
+   
+     
+}
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  height: 100px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+}
+.elvalaszto {
+  border: none;
+  height: 2px;
+  background-color: #444;
+  width: 80%;
+  margin: 40px auto;
+}
+  
+h2 {
+    color: #333;
+}
+
+nav {
+    text-align: center;
+    background-color: #444;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+.apartman-info-gal {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.cimsor {
+  text-align: center;
+   height: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.edakezdokep {
+  width: 700px;
+  height: 600px;
+}
+
+.edakezdokepek {
+  height: 600px;
+}
+
+.apartman-info img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.apartman-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.apartman-info ul li {
+    background: #f0f0f0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px
+}
+
+
+.logo {
+    height: 100px;
+    width: 100px;
+    float: left;
+  transition: height 0.3s ease;
+    
+}
+.kozep {
+  height: 700px;   
+}
+
+.cim-szoveg {
+   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px 40px;
+  border-radius: 10px
+}
+
+.kezdo-cim {
+  font-size: 50px;
+  
+}
+
+.kezdo-alcim {  
+  font-size: 30px;
+}
+
+.kezdo-nagykep {
+  width: 1800px;
+  height: 700px;
+}
+
+.siofokkep{
+  
+  height: 680px;
+  float: left;
+   border: 4px solid #333;     
+      border-radius: 15px;        
+}
+
+.kapcsolat {
+  font-size: 42px;
+}
+
+.kapcsolat-szoveg {
+  font-size: 30px;
+}
+
+.kapcsolat-hatter{
+    height: 700px;
+    background-color: #f4f4f4;  
+}
+
+.rolunk {
+  font-size: 20px;
+  color: white;
+  height: 300px;
+}
+
+.rolunk-cim {
+  font-size: 42px;
+}
+
+.leiraskep-eda {
+  float: left;
+  height: 700px;
+  width: 800px;
+  border: 4px solid #333;      
+  border-radius: 15px; 
+}
+.leiras {
+  height: 750px;
+  background-color: #333;
+}
+
+.leiras-cim {
+  font-size: 42px;
+  color: white;
+}
+
+.alcim {
+  font-size: 30px;
+}
+
+.kitoltes {
+  height: 200px;
+}
+
+.extrak {
+   height: 900px;
+   background-color: #f4f4f4;
+}
+
+.extrak-cim {
+  font-size: 42px;
+}
+
+.extrak-kep {
+  height: 700px;
+  border: 4px solid #333;      
+  border-radius: 15px; 
+  float: right;
+}
+
+.extrak-szoveg {
+  font-size: 20px;
+  line-height: 2;
+  float: left;
+}
+
+.lapozas-kepek {
+  width: 700px;
+  height: 700px;
+}
+
+.galeria {
+  height: 900px;
+  background-color: #f4f4f4;
+}
+
+.galeria-cim {
+  font-size: 42px;
+}
+
+.leiras-szoveg {
+  font-size: 20px;
+  color: white;
+}
+
+.hover-link {
+  color: black; 
+}
+
+.hover-link:hover {
+  color: #0077cc;
+  transition: color 0.4s ease;
+}
+
+
+.megkozelites-szoveg {
+  font-size: 18px;
+  text-align: center;
+  color: white;
+}
+
+.megkozelites-cim {
+  font-size: 42px;
+  color: white;
+}
+
+.vonal {
+  border: solid, black, 2px;
+}
+
+ul {
+    padding: 0;
+    background-color: #333;
+  }
+
+  li {
+    float: left;
+    position: relative;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    padding: 14px 20px;
+  }
+
+  li:hover {
+    color: black;
+  }
+
+  .legordulo {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    z-index: 1;
+  }
+
+  .legordulo a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+  }
+
+  .legordulo a:hover {
+    background-color: #666;
+  }
+
+  li:hover .legordulo {
+    display: block;
+  }
+
+  .legordulo.active {
+  display: block;
+}
+
+.r-felulet {
+  background: white;
+  padding: 20px;
+  margin: 40px auto;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.r-felulet input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 90%;
+}
+
+.r-felulet button {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.slider {
+  position: relative;
+  width: 900px;
+  margin: auto;
+}
+
+.slides {
+  position: relative; 
+  overflow: hidden;
+  width: 100%;
+  height: 800px;
+}
+
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#slide1:checked ~ .s1,
+#slide2:checked ~ .s2,
+#slide3:checked ~ .s3,
+#slide4:checked ~ .s4,
+#slide5:checked ~ .s5,
+#slide6:checked ~ .s6,
+#slide7:checked ~ .s7,
+#slide8:checked ~ .s8,
+#slide9:checked ~ .s9,
+#slide10:checked ~ .s10,
+#slide11:checked ~ .s11,
+#slide12:checked ~ .s12 {
+  opacity: 1;
+  position: relative;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+}
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+.prev-next {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; 
+  display: none;
+  z-index: 5;
+}
+#slide1:checked ~ .prev-next1,
+#slide2:checked ~ .prev-next2,
+#slide3:checked ~ .prev-next3,
+#slide4:checked ~ .prev-next4,
+#slide5:checked ~ .prev-next5,
+#slide6:checked ~ .prev-next6,
+#slide7:checked ~ .prev-next7,
+#slide8:checked ~ .prev-next8,
+#slide9:checked ~ .prev-next9,
+#slide10:checked ~ .prev-next10,
+#slide11:checked ~ .prev-next11,
+#slide12:checked ~ .prev-next12 {
+  display: block;
+}

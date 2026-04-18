@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kezdőlap</title>
+    <link rel="stylesheet" href="stilus.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <a href="index.html"><img class="logo" src="logo.jpg" class="logo"></a>
+        <ul>
+            <li>
+              <p><a href="#" class="hover-link">Apartmanjaink</a></p>
+              <div class="legordulo">
+                <a href="edabeach.html" class="hover-link">edabeach</a>
+                <a href="galerius.html" class="hover-link">galerius</a>
+            </div>
+            </li>
+            <li><p><a href="#rolunk" class="hover-link">Rólunk</a></p></li>
+            <li><p><a href="#extrak" class="hover-link">Szabadidős lehetőségek</a></p></li>
+            <li><p><a href="#kapcsolat" class="hover-link">Kapcsolat</a></p></li>
+            </li>
+          </ul>
+        
+    </header>
+
+    <nav class="kezdo-hatter">
+        <img src="hatter.jpg" class="kezdo-nagykep">
+        <img src="" class="csak-mobil-kezdo-nagykep2">
+        <div class="cim-szoveg">
+            <p class="kezdo-cim">Üdvözöljük az EdaBeach weboldalán!</p>
+        </div>
+    
+
+    <nav class="rolunk" id="rolunk">
+        <p class="rolunk-cim">Rólunk</p>
+        <p>Siófok egyik legismertebb nyaralója, amely közvetlen Balaton partja mellett található.
+            Erkélyes apartmanjainkból páratlat kilátás nyílik a tóra.
+        </p>
+        <p>+SUP bérlés</p>
+
+    </nav>
+
+    <nav class="extrak" id="extrak">
+        <p class="extrak-cim">Szabadidős lehetőségek</p>
+        <img src="304318870.jpg" class="extrak-kep">
+      
+
+        <p class="extrak-szoveg">
+            <h2>Fedezd fel Siófok környékét – szabadidős élmények minden korosztálynak</h2>
+            Siófok nemcsak a Balaton egyik legnépszerűbb üdülőhelye, hanem a kikapcsolódás és szórakozás valódi központja is. Apartmanunk ideális kiindulópont a környék felfedezéséhez – akár aktív pihenésre, akár nyugodt feltöltődésre vágysz.
+
+            <h2>Strandolás és vízi sportok</h2>
+            A híres Nagystrand csupán pár perc sétára található, ahol homokos part, vízibicikli, SUP bérlési lehetőség várja a vendégeket. A gyerekek számára több élménycsúszda és vízi játszótér is rendelkezésre áll.
+
+            <h2>Kerékpározás és kirándulás</h2>
+            A balatoni bringakörút egyik legszebb szakasza halad át Siófokon. Bérelhetsz kerékpárt a városban, és akár egy fél nap alatt felfedezheted a közeli Balatonkiliti vagy Zamárdi lankás útjait is. Aki inkább gyalogolna, annak a Töreki természetvédelmi területet ajánljuk, ahol gyönyörű tanösvények vezetnek a tavak mentén.
+
+            <h2>Hajókirándulás</h2>
+            A kikötőből induló sétahajókkal megcsodálhatod a Balaton panorámáját a vízről, de akár naplementés vacsorahajóra vagy gyermekes kalózhajóra is befizethetsz.
+
+            <h2>Kulturális programok és éjszakai élet</h2>
+            Nyáron Siófokon mindig történik valami: koncertek a Plázson, előadások a Kálmán Imre Kulturális Központban, vásárok, és szabadtéri rendezvények várják a látogatókat. Az esti szórakozást bárok, teraszos éttermek és klubok biztosítják a Petőfi sétányon.
+        </p>
+    </nav>
+
+    <div class="r-felulet">
+        <h2>Regisztráció</h2>
+        <input type="text" id="regfelh" placeholder="Felhasználónév">
+        <input type="password" id="regjelsz" placeholder="Jelszó">
+        <button onclick="regisztracio()">Regisztráció</button>
+
+        <h2>Bejelentkezés</h2>
+        <input type="text" id="befelh" placeholder="Felhasználónév">
+        <input type="password" id="bejelsz" placeholder="Jelszó">
+        <button onclick="bejelentkezes()">Bejelentkezés</button>
+
+        <p id="message"></p>
+    </div>
+
+    <nav class="kapcsolat-hatter" id="kapcsolat">
+        <img src="hatteridk.jpg" class="siofokkep">
+        <div class="kapcsolat">
+        <p>Kapcsolat</p>
+        <p class="kapcsolat-szoveg">
+            Tel.: +36 88 88 88 888 / +36 99 99 99 999
+        </p>
+        <p class="kapcsolat-szoveg">  
+            e-mail: edabeachsiofok1@gmail.com
+        </p>
+
+    </div>
+    </nav>
+ 
+    <footer>
+        <p>&copy; 2026 EdaBeach Apartmanok</p>
+    </footer>
+    <script src="js.js"></script>
+</body>
+</html>
+
+
