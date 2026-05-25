@@ -1,4 +1,4 @@
-const express = require('express');
+﻿const express = require('express');
 const mysql = require('mysql2/promise');
 const cors = require('cors');
 const app = express();
@@ -18,9 +18,14 @@ const dbConfig = {
 app.post('/api/bejelentkezes', async (req, res) => {
     const { email, jelszo } = req.body;
     let connection;
+
     try {
         connection = await mysql.createConnection(dbConfig);
-        const selectQuery = `SELECT * FROM felhasznalok WHERE email = ? AND jelszo = ?`;
+
+        const selectQuery = `
+        SELECT * FROM felhasznalok WHERE email = ? AND jelszo = ?
+        `;
+
         const [selectResult] = await connection.execute(selectQuery, [email, jelszo]);
 
         if (selectResult.length === 0) {
@@ -29,36 +34,74 @@ app.post('/api/bejelentkezes', async (req, res) => {
                 message: "A megadott email cím-jelszó párossal felhasználó nem található!"
             });
         }
-        return res.status(200).json({ success: true, message: "Sikeres bejelentkezés." });
-    } catch (error) {
+
+        return res.status(200).json({
+            success: true,
+            message: "Sikeres bejelentkezés."
+        });
+    }
+    catch (error) {
         console.error("Adatbázis hiba:", error);
-        return res.status(500).json({ success: false, message: "Sververhiba történt." });
-    } finally {
-        if (connection) await connection.end();
+        return res.status(500).json({
+            success: false,
+            message: "Szerverhiba történt."
+        });
+    }
+    finally {
+        if (connection) {
+            await connection.end();
+        }
     }
 });
 
 // --- REGISZTRÁCIÓ ---
-app.post('/api/registracio', async (req, res) => {
+app.post('/api/regisztracio', async (req, res) => { // <-- ITT JAVÍTVA A "Z" BETŰ
     const { email, jelszo } = req.body;
     let connection;
+
     try {
         connection = await mysql.createConnection(dbConfig);
-        const selectQuery = `SELECT * FROM felhasznalok WHERE email = ?`;
+
+        const selectQuery = `
+        SELECT * FROM felhasznalok WHERE email = ?
+        `;
+
         const [selectResult] = await connection.execute(selectQuery, [email]);
 
         if (selectResult.length > 0) {
-            return res.status(400).json({ success: false, message: "A megadott email címmel már regisztráltak!" });
+            return res.status(400).json({
+                success: false,
+                message: "A megadott email címmel már korábban regisztráltak!"
+            });
         }
 
-        const insertQuery = `INSERT INTO \`felhasznalok\` (\`email\`, \`jelszo\`) VALUES (?, ?)`;
+        const insertQuery = `
+        INSERT INTO \`felhasznalok\` (\`email\`, \`jelszo\`)
+        VALUES (?, ?)
+        `;
+
         await connection.execute(insertQuery, [email, jelszo]);
-        return res.status(201).json({ success: true, message: "Sikeres regisztráció" });
-    } catch (error) {
+
+        return res.status(201).json({
+            success: true,
+            message: "Sikeres regisztráció",
+            data: {
+                email: email,
+                jelszo: jelszo
+            }
+        });
+    }
+    catch (error) {
         console.error("Adatbázis hiba:", error);
-        return res.status(500).json({ success: false, message: "Szerverhiba" });
-    } finally {
-        if (connection) await connection.end();
+        return res.status(500).json({
+            success: false,
+            message: "Szerverhiba"
+        }); 
+    }
+    finally {
+        if (connection) {
+            await connection.end();
+        }
     }
 });
 
