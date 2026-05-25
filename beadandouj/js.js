@@ -1,69 +1,54 @@
 function regisztracio() {
-  const felhnev = document.getElementById("regfelh").value;
-  const jelszo = document.getElementById("regjelsz").value;
+    const felhnev = document.getElementById("regfelh").value;
+    const jelszo = document.getElementById("regjelsz").value;
 
-  if (felhnev === "" || jelszo === "") {
-    showMessage("Tölts ki minden mezőt!");
-    return;
-  }
+    document.getElementById("regfelh").value = "";
+    document.getElementById("regjelsz").value = "";
 
-  let felhasznalok = JSON.parse(localStorage.getItem("felhasznalok"));
-  if (felhasznalok === null) {
-    felhasznalok = [];
-  }
-
-  let marLetezik = false;
-
-  for (let i = 0; i < felhasznalok.length; i++) {
-    if (felhasznalok[i].felhnev === felhnev) {
-      marLetezik = true;
+    if (felhnev === "" || jelszo === "") {
+        showMessage("Tölts ki minden mezőt!");
+        return;
     }
-  }
 
-  if (marLetezik) {
-    showMessage("Ez a felhasználó már létezik!");
-    return;
-  }
+    let adatok = { email: felhnev, jelszo: jelszo };
 
-  felhasznalok.push({
-    felhnev: felhnev,
-    jelszo: jelszo
-  });
-
-  localStorage.setItem("felhasznalok", JSON.stringify(felhasznalok));
-
-  showMessage("Sikeres regisztráció");
+    fetch('http://localhost:3000/api/registracio', {
+        method: "POST",
+        cache: "no-cache",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(adatok)
+    }).then(
+        resp => resp.json(),
+        err => console.log(err)
+    ).then(adatok => showMessage(adatok.message));
 }
-
 
 function bejelentkezes() {
-  const felhnev = document.getElementById("befelh").value;
-  const jelszo = document.getElementById("bejelsz").value;
+    const felhnev = document.getElementById("befelh").value;
+    const jelszo = document.getElementById("bejelsz").value;
 
-  let felhasznalok = JSON.parse(localStorage.getItem("felhasznalok"));
-  if (felhasznalok === null) {
-    felhasznalok = [];
-  }
+    document.getElementById("befelh").value = "";
+    document.getElementById("bejelsz").value = "";
 
-  let sikeres = false;
-
-  for (let i = 0; i < felhasznalok.length; i++) {
-    if (
-      felhasznalok[i].felhnev === felhnev &&
-      felhasznalok[i].jelszo === jelszo
-    ) {
-      sikeres = true;
+    if (felhnev === "" || jelszo === "") {
+        showMessage("Tölts ki minden mezőt!");
+        return;
     }
-  }
 
-  if (sikeres) {
-    showMessage("Sikeres bejelentkezés");
-  } else {
-    showMessage("Hibás bejelentkezési adatok");
-  }
+    let adatok = { email: felhnev, jelszo: jelszo };
+
+    fetch('http://localhost:3000/api/bejelentkezes', {
+        method: "POST",
+        cache: "no-cache",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(adatok)
+    }).then(
+        resp => resp.json(),
+        err => console.log(err)
+    ).then(adatok => showMessage(adatok.message));
 }
 
-
+// ITT VAN KIJAVÍTVA A FUNCTION!
 function showMessage(message) {
-  document.getElementById("message").innerText = message;
+    document.getElementById("message").innerText = message;
 }
