@@ -55,7 +55,7 @@ app.post('/api/bejelentkezes', async (req, res) => {
 });
 
 // --- REGISZTRÁCIÓ ---
-app.post('/api/regisztracio', async (req, res) => { // <-- ITT JAVÍTVA A "Z" BETŰ
+app.post('/api/regisztracio', async (req, res) => {
     const { email, jelszo } = req.body;
     let connection;
 
