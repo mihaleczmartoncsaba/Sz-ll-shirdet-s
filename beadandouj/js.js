@@ -15,7 +15,6 @@
         jelszo: jelszo
     };
 
-    // <-- ITT JAVÍTVA A "Z" BETŰ
     fetch('http://localhost:3000/api/regisztracio', { 
         method: "POST",
         cache: "no-cache",
